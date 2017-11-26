@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  is_organic: false
+  website: MyString
+  status: MyString
+  ext_id: MyString
+  description: MyString
+  status_display: MyString
+
+two:
+  name: MyString
+  is_organic: false
+  website: MyString
+  status: MyString
+  ext_id: MyString
+  description: MyString
+  status_display: MyString

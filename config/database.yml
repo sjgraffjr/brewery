@@ -1,9 +1,12 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  database: brewery_development
   username: root
   password:
+
+development:
+  <<: *default
+  database: brewery_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

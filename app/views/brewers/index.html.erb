@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Brewers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Is organic</th>
+      <th>Website</th>
+      <th>Status</th>
+      <th>Ext</th>
+      <th>Description</th>
+      <th>Status display</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @brewers.each do |brewer| %>
+      <tr>
+        <td><%= brewer.name %></td>
+        <td><%= brewer.is_organic %></td>
+        <td><%= brewer.website %></td>
+        <td><%= brewer.status %></td>
+        <td><%= brewer.ext_id %></td>
+        <td><%= brewer.description %></td>
+        <td><%= brewer.status_display %></td>
+        <td><%= link_to 'Show', brewer %></td>
+        <td><%= link_to 'Edit', edit_brewer_path(brewer) %></td>
+        <td><%= link_to 'Destroy', brewer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Brewer', new_brewer_path %>
