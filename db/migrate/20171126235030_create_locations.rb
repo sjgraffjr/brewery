@@ -11,6 +11,7 @@ class CreateLocations < ActiveRecord::Migration[5.1]
       t.string :phone
       t.string :country_iso_code
       t.integer :brewer_id
+      t.integer :ext_id
 
       t.timestamps
     end

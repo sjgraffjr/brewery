@@ -6,7 +6,7 @@ class CreateBrewers < ActiveRecord::Migration[5.1]
       t.string :website
       t.string :status
       t.string :ext_id
-      t.string :description
+      t.text :description
       t.string :status_display
 
       t.timestamps
