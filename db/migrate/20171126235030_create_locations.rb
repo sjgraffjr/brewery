@@ -6,8 +6,8 @@ class CreateLocations < ActiveRecord::Migration[5.1]
       t.string :state
       t.string :zipcode
       t.string :region
-      t.decimal :latitude
-      t.decimal :longitude
+      t.decimal :latitude, {scale: 6, precision: 10}
+      t.decimal :longitude, {scale: 6, precision: 10}
       t.string :phone
       t.string :country_iso_code
       t.integer :brewer_id

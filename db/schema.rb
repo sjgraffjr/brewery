@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 20171126235030) do
 
-  create_table "brewers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "brewers", force: :cascade do |t|
     t.string "name"
     t.boolean "is_organic"
     t.string "website"
@@ -24,14 +27,14 @@ ActiveRecord::Schema.define(version: 20171126235030) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "locations", force: :cascade do |t|
     t.string "address"
     t.string "city"
     t.string "state"
     t.string "zipcode"
     t.string "region"
-    t.decimal "latitude", precision: 10
-    t.decimal "longitude", precision: 10
+    t.decimal "latitude", precision: 10, scale: 6
+    t.decimal "longitude", precision: 10, scale: 6
     t.string "phone"
     t.string "country_iso_code"
     t.integer "brewer_id"
