@@ -4,7 +4,7 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all.limit(500)
+    @locations = Location.all.includes(:brewer).limit(500)
   end
 
   # GET /locations/1
