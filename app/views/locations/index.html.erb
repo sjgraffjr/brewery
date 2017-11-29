@@ -6,8 +6,7 @@
   <thead>
     <tr>
       <th>Address</th>
-      <th>City</th>
-      <th>State</th>
+      <th>Locality</th>
       <th>Zipcode</th>
       <th>Region</th>
       <th>Latitude</th>
@@ -23,8 +22,7 @@
     <% @locations.each do |location| %>
       <tr>
         <td><%= location.address %></td>
-        <td><%= location.city %></td>
-        <td><%= location.state %></td>
+        <td><%= location.locality %></td>
         <td><%= location.zipcode %></td>
         <td><%= location.region %></td>
         <td><%= location.latitude %></td>

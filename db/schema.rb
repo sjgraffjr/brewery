@@ -29,8 +29,7 @@ ActiveRecord::Schema.define(version: 20171126235030) do
 
   create_table "locations", force: :cascade do |t|
     t.string "address"
-    t.string "city"
-    t.string "state"
+    t.string "locality"
     t.string "zipcode"
     t.string "region"
     t.decimal "latitude", precision: 10, scale: 6
