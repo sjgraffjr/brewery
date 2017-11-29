@@ -4,7 +4,7 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all.includes(:brewer).limit(1000)
+    @locations = Location.all.paginate(page: params[:page], per_page: 200)
   end
 
   # GET /locations/1
