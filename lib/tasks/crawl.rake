@@ -3,7 +3,7 @@
 namespace :crawl do
 	desc "Crawl the brewerydb locations api"
 	task locations: :environment do
-		(1..200).each do  |i| 
+		(1..211).each do  |i| 
 			# go to brewery db api and get data
 			locations = Brewerydb::Location.index(p: i)
 
@@ -36,9 +36,9 @@ namespace :crawl do
 					  brewer_id: brewer.id,
 					  address: location.street_address
 					)
-	      		end
-      		end
       	end
+    	end
+    end
 	end
 end
 
