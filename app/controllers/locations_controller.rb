@@ -4,7 +4,16 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all.paginate(page: params[:page], per_page: 200)
+    @locations = Location.all
+    if params[:top_right] && params[:bottom_left]
+      @locations = @locations.where("latitude < ? and latitude > ? and longitude < ? and longitude > ?", 
+        params[:top_right][:lat],
+        params[:bottom_left][:lat],
+        params[:top_right][:lon],
+        params[:bottom_left][:lon]
+      )
+    end
+    @locations = @locations.paginate(page: params[:page], per_page: 50)
   end
 
   # GET /locations/1
