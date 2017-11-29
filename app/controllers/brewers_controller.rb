@@ -4,8 +4,7 @@ class BrewersController < ApplicationController
   # GET /brewers
   # GET /brewers.json
   def index
-    @brewers = Brewer.all.paginate(page: params[:page], per_page: 200)
-    
+    @brewers = Brewer.all.paginate(page: params[:page], per_page: 50)
   end
 
   # GET /brewers/1
