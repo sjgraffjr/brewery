@@ -4,7 +4,7 @@ class BrewersController < ApplicationController
   # GET /brewers
   # GET /brewers.json
   def index
-    @brewers = Brewer.all.limit(500)
+    @brewers = Brewer.all.limit(1000)
   end
 
   # GET /brewers/1
