@@ -4,7 +4,7 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all
+    @locations = Location.opened
     if params[:top_right] && params[:bottom_left]
       @locations = @locations.where("latitude < ? and latitude > ? and longitude < ? and longitude > ?", 
         params[:top_right][:lat],

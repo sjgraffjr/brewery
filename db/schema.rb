@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20171126235030) do
     t.string "country_iso_code"
     t.integer "brewer_id"
     t.string "ext_id"
+    t.boolean "isClosed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
