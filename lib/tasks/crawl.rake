@@ -1,6 +1,26 @@
 
 
 namespace :crawl do
+	desc "Crawl the brewerydb breweries api"
+	task images: :environment do 
+		i = 0
+		count = Brewer.count
+
+		#going through postgres db to find all the brewers
+		Brewer.all.find_each  do |brewer|
+			#this cathces any errors and continues and on
+			begin 
+				b = Brewerydb::Brewery.show(brewer.ext_id)
+				brewer.update(img_url: b.images&.icon)
+				i = i + 1
+				puts "fetched #{i} of #{count}"
+			rescue
+				i = i + 1
+				puts "#{i} failed"
+			end
+		end 
+
+	end 
 	desc "Crawl the brewerydb locations api"
 	task locations: :environment do
 		(1..211).each do  |i| 
