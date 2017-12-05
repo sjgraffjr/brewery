@@ -1,6 +1,7 @@
 class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
-
+  http_basic_authenticate_with name: "admin", password: "password", except: :index
+  
   # GET /locations
   # GET /locations.json
   def index

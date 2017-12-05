@@ -1,6 +1,7 @@
 class BrewersController < ApplicationController
   before_action :set_brewer, only: [:show, :edit, :update, :destroy]
-
+  http_basic_authenticate_with name: "admin", password: "password", except: :index
+  
   # GET /brewers
   # GET /brewers.json
   def index
